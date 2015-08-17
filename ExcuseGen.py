@@ -13,16 +13,16 @@ def getRandomParticipantIndex(roster):
     return random.randint(0, len(roster) - 1)
 
 
-def getPerson():
+def getPerson(index, roster):
     """ Returns person (string) from roster """
     ### rewrite getPerson() to take a index and roster; return name at index #
-    pass
+    return roster[index]
 
 
-def addPerson():
+def addPerson(name, roster):
     """ Adds person (string) to roster """
-    ### rewrite addStudent() to take a name and roster; add name to roster #
-    pass
+    ### rewrite addPerson() to take a name and roster; add name to roster #
+    roster.append(name)
 
 
 def get_excuse():
@@ -47,19 +47,21 @@ def main():
                              "Pooja", "Proxima", "Reema", "Richa", "Saikiran",
                              "Sasha", "Shirish" ]
                              
-    ### your one line of code goes here  to print roster #
-
+    ### your one line of code goes here to print roster #
+    #print bootcampParticipants
     # add 'Daniel' to bootcampParticipants
-
+    addPerson('Daniel',bootcampParticipants)
 
     ### Your Code Here ###
     # get random participant 
+    bad_person = getPerson(getRandomParticipantIndex(bootcampParticipants), bootcampParticipants)
     
     # print person's name who has excuse today. 
+    # print bad_person
 
     ###
     # print person's name who has excuse today. 
-    print name + " said \'" + excuses() + '\''
+    print bad_person + " said \'" + get_excuse() + '\''
 
 
 if __name__ == "__main__":
